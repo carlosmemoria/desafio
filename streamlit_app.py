@@ -23,14 +23,19 @@ def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
 
-	col1, col2 = st.columns([3, 1]) 
-		data = np.random.randn(10, 1)
+    col1, col2, col3 = st.columns(3)
 
-		col1.subheader("A wide column with a chart")
-		col1.line_chart(data)
+with col1:
+    st.header("A cat")
+    st.image("https://static.streamlit.io/examples/cat.jpg")
 
-		col2.subheader("A narrow column with the data")
-		col2.write(data)
+with col2:
+    st.header("A dog")
+    st.image("https://static.streamlit.io/examples/dog.jpg")
+
+with col3:
+    st.header("An owl")
+    st.image("https://static.streamlit.io/examples/owl.jpg")
 		
 def data_header():
     st.header('Cabeçalho do Dataframe')
