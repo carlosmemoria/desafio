@@ -25,17 +25,11 @@ def data_describe():
 	
     count = df["target"].value_counts().values
     anos = df["target"].value_counts().index
-    plt.figure(figsize = (24, 8))
-    plt.subplot(1, 2, 1)
-    plt.bar(anos, count, ec = "k", alpha = .6, color = "royalblue")
-    plt.xlabel("Ano")
-    plt.title("Ano de início de graduação dos alunos que realizaram o ENADE em 2016")
-    plt.subplot(1, 2, 2)
     plt.pie(count, 
         labels = list(anos),  
-        colors = ["#20257c", "#424ad1", "#6a8ee8", "#66bbe2", "#66dee2", "#6ce2cb", "#6ad187", "#3b7f5b"],
+        colors = ["#20257c", "#424ad1",
         labeldistance = 1.1,
-        explode = [0, 0, 0, .1, .2, .4, .6, .8],
+        explode = [0, 0],
         wedgeprops = {"ec": "k"}, 
         textprops = {"fontsize": 15}, 
         )
