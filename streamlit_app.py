@@ -27,8 +27,9 @@ def data_describe():
     anos = df["target"].value_counts().index
     plt.pie(count, 
         labels = list(anos),  
-        colors = ["#20257c", "#424ad1",
-        
+        colors = ["#20257c", "#424ad1"],
+        labeldistance = 1.1,
+        explode = [0, 0, 0, .1, .2, .4, .6, .8],
         wedgeprops = {"ec": "k"}, 
         textprops = {"fontsize": 15}, 
         )
