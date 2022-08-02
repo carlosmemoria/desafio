@@ -29,9 +29,7 @@ def data_describe():
     y = ['Atendida','Não atendida']
     
     with col1:	
-        fig = px.bar(x = x,
-	y = y,
-	title=" Tipos de dados ",
+        fig = px.bar(x = x, y = y, title=" Tipos de dados ",
 	labels={'x':'Quantidade','y':'Condição'},width=400, height=400)
 	st.plotly_chart(fig, use_container_width=False, sharing='streamlit')	
 
@@ -39,12 +37,6 @@ def data_describe():
     # Use `hole` to create a donut-like pie chart
 	    fig = go.Figure(data=[go.Pie(labels=y, values=x, hole=.3)])
 	    st.plotly_chart(fig, use_container_width=False, sharing='streamlit')
-
-	    n = df['target'].value_counts() [0]
-	    e = df['target'].value_counts() [1]
-
-	    st.write("{}{}{}".format(condTrue,n," "+ resposta))
-	    st.write("{}{}{}".format(condFalse,e," "+ resposta))
 
 def data_header():
     st.header('Cabeçalho do Dataframe')
