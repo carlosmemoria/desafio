@@ -36,7 +36,7 @@ def data_describe():
     with col2:
     # Use `hole` to create a donut-like pie chart
 	    fig = go.Figure(data=[go.Pie(labels=y, values=x, hole=.3)])
-	    st.plotly_chart(fig, use_container_width=False, sharing='streamlit')
+	    st.plotly_chart(fig, use_container_width=True, sharing='streamlit')
 
 def data_header():
     st.header('Cabeçalho do Dataframe')
