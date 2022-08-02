@@ -17,7 +17,7 @@ def home(uploaded_file):
     if uploaded_file:
         st.header('Comece a explorar os dados usando o menu à esquerda')
     else:
-        st.header('To begin please upload a file')
+        st.header('Para começar, faça o upload de um arquivo')
 	
 	col1, col2, col3 = st.columns(3)
 
