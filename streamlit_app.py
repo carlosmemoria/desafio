@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+import plotly.graph_objects as go
 from sklearn.model_selection import train_test_split
 
 condTrue = 'Não há ocorrência do evento que desejamos prever em '
@@ -24,17 +25,12 @@ def data_describe():
 	
 	
     anos = df["target"].value_counts().index
-    plt.pie(count, 
-	labels = list(anos),  
-	colors = ["#20257c", "#424ad1", "#6a8ee8", "#66bbe2", "#66dee2", "#6ce2cb", "#6ad187", "#3b7f5b"],
-	labeldistance = 1.1,
-	explode = [0, 0, 0, .1, .2, .4, .6, .8],
-	wedgeprops = {"ec": "k"}, 
-	textprops = {"fontsize": 15}, 
-	)
-    plt.axis("equal")
-    plt.title("Ano de início de graduação dos alunos que realizaram o ENADE em 2016")
-    st.plotly_chart(plt)
+    labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+    values = [4500, 2500, 1053, 500]
+
+    # Use `hole` to create a donut-like pie chart
+    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
+    fig.show()
 
     n = df['target'].value_counts() [0]
     e = df['target'].value_counts() [1]
