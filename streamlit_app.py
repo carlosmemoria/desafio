@@ -27,8 +27,8 @@ def data_describe():
     
     
     fig = px.bar(x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ],
-    y = ['Atendida','Não atendida']
-		 title=" Tipos de dados ",
+    y = ['Atendida','Não atendida'],
+    title=" Tipos de dados ",
     labels={'x':'Quantidade','y':'Condição'},width=400, height=400)
     st.plotly_chart(fig)	
 
