@@ -23,17 +23,17 @@ def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
 
-    values = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ]
-    labels = ['Atendida','Não atendida']
+    x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ]
+    y = ['Atendida','Não atendida']
 	
-    fig = px.bar(x = values,
-    y = labels,
+    fig = px.bar(x = x,
+    y = y,
     title=" Tipos de dados ",
     labels={'x':'Quantidade','y':'Condição'},width=400, height=400)
     st.plotly_chart(fig)	
 
     # Use `hole` to create a donut-like pie chart
-    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
+    fig = go.Figure(data=[go.Pie(labels=y, values=x, hole=.3)])
     st.plotly_chart(fig)
 
     n = df['target'].value_counts() [0]
