@@ -21,7 +21,7 @@ def home(uploaded_file):
 
 def data_describe():
     st.header('Estatísticas do Dataframe')
-    st.write(df.describe())
+    #st.write(df.describe())
 
     col1, col2, col3 = st.columns(3)
 
