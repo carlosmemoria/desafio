@@ -23,19 +23,19 @@ def data_describe():
     st.write(df.describe())
 	
 	
-    count = df["target"].value_counts().values
-    anos = df["target"].value_counts().index
-    plt.pie(count, 
-        labels = list(anos),  
-        colors = ["#20257c", "#424ad1"],
-        labeldistance = 1.1,
-        explode = [0, 0, 0, .1, .2, .4, .6, .8],
-        wedgeprops = {"ec": "k"}, 
-        textprops = {"fontsize": 15}, 
-        )
-    plt.axis("equal")
-    plt.title("Ano de início de graduação dos alunos que realizaram o ENADE em 2016")
-    plt.legend()
+    anos = df["nu_ano_inicio_graduacao"].value_counts().index
+	plt.subplot(1, 2, 2)
+	plt.pie(count, 
+		labels = list(anos),  
+		colors = ["#20257c", "#424ad1", "#6a8ee8", "#66bbe2", "#66dee2", "#6ce2cb", "#6ad187", "#3b7f5b"],
+		labeldistance = 1.1,
+		explode = [0, 0, 0, .1, .2, .4, .6, .8],
+		wedgeprops = {"ec": "k"}, 
+		textprops = {"fontsize": 15}, 
+		)
+	plt.axis("equal")
+	plt.title("Ano de início de graduação dos alunos que realizaram o ENADE em 2016")
+	plt.legend()
 
     n = df['target'].value_counts() [0]
     e = df['target'].value_counts() [1]
