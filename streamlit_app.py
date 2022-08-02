@@ -96,15 +96,16 @@ def bar_plot_scikit():
                                                     test_size=0.5)
     df_y = pd.DataFrame(y_test)	
     st.header('Utilização da função train_test_split da biblioteca scikit learn')
+    
+    n = df_y['target'].value_counts() [0]
+    e = df_y['target'].value_counts() [1]
+	
     fig = px.bar(x = [ df_y['target'].value_counts() [0], df_y['target'].value_counts() [1] ],
     y = ['Não atende','Atende'],
     title=" Tipos de dados ",
     labels={'x':'Quantidade','y':'Condição'},width=800, height=400)
 
     st.plotly_chart(fig)	
-
-    n = df_y['target'].value_counts() [0]
-    e = df_y['target'].value_counts() [1]
 
     st.write("{}{}{}".format(condTrue,n," "+ resposta))
     st.write("{}{}{}".format(condFalse,e," "+ resposta))	
