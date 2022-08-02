@@ -23,8 +23,7 @@ def data_describe():
     st.write(df.describe())
 	
 	
-    anos = df["nu_ano_inicio_graduacao"].value_counts().index
-	plt.subplot(1, 2, 2)
+    anos = df["target"].value_counts().index
 	plt.pie(count, 
 		labels = list(anos),  
 		colors = ["#20257c", "#424ad1", "#6a8ee8", "#66bbe2", "#66dee2", "#6ce2cb", "#6ad187", "#3b7f5b"],
