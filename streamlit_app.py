@@ -23,10 +23,10 @@ def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
 
-    values = df['target'].value_counts().index()
+    values = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ]
     labels = ['Atendida','Não atendida']
 	
-    fig = px.bar(x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ],
+    fig = px.bar(x = values,
     y = labels,
     title=" Tipos de dados ",
     labels={'x':'Quantidade','y':'Condição'},width=400, height=400)
