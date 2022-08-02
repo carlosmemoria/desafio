@@ -25,19 +25,14 @@ def data_describe():
 
     col1, col2 = st.beta_columns(2)
 
-    x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ]
-    y = ['Atendida','Não atendida']
-    
-    with col1:	
-        fig = px.bar(x = x, y = y, title=" Tipos de dados ",
-	labels={'x':'Quantidade','y':'Condição'},width=400, height=400)
-	st.plotly_chart(fig, use_container_width=False, sharing='streamlit')	
+	with col1 :
+	    fig = px.histogram(train, x=x, nbins=50, title='Sexo dos Passageiros', labels={"Sex": 'Sexo'},width=400, height=400)
+	    st.plotly_chart(fig, use_container_width=False, sharing='streamlit')
 
-    with col2:
-    # Use `hole` to create a donut-like pie chart
-	    fig = go.Figure(data=[go.Pie(labels=y, values=x, hole=.3)])
-	    st.plotly_chart(fig, use_container_width=True, sharing='streamlit')
-
+	with col2 :
+	    fig = px.bar(train, x=x, y=y, color="Sex", title=" Sobreviventes x Sexo ",labels={'Sex': 'Sexo', 'Survived': 'Sobreviventes'},width=400, height=400)
+	    st.plotly_chart(fig, use_container_width=False, sharing='streamlit')		
+		
 def data_header():
     st.header('Cabeçalho do Dataframe')
     st.write(df.head())
