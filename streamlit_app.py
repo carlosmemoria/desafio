@@ -28,8 +28,7 @@ def data_describe():
     plt.pie(count, 
         labels = list(anos),  
         colors = ["#20257c", "#424ad1",
-        labeldistance = 1.1,
-        explode = [0, 0],
+        
         wedgeprops = {"ec": "k"}, 
         textprops = {"fontsize": 15}, 
         )
