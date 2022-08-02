@@ -26,7 +26,7 @@ def data_describe():
     values = df["target"].value_counts().values
     labels = ['Atende','Não atende']
     
-    fig = go.Figure([go.Bar(labels=labels, values=values, hole=.3)])
+    fig = go.Figure([go.Bar(labels=labels, values=values)])
     fig.show()	
 
     # Use `hole` to create a donut-like pie chart
