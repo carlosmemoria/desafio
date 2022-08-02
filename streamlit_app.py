@@ -19,7 +19,7 @@ def home(uploaded_file):
     else:
         st.header('To begin please upload a file')
 	
-col1, col2, col3 = st.columns(3)
+	col1, col2, col3 = st.columns(3)
 
 	with col1:
 	    st.header("A cat")
@@ -32,7 +32,7 @@ col1, col2, col3 = st.columns(3)
 	with col3:
 	    st.header("An owl")
 	    st.image("https://static.streamlit.io/examples/owl.jpg")
-		
+
 def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
