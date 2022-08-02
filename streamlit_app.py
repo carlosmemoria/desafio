@@ -2,9 +2,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import sklearn
-
 import plotly.express as px
+from sklearn.model_selection import train_test_split
 
 condTrue = 'Não há ocorrência do evento que desejamos prever em '
 condFalse = 'Existe ocorrência do evento que desejamos prever '
