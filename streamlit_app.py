@@ -23,15 +23,14 @@ def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
 
-    col1, col2 = st.beta_columns(2)
+    col1, col2 = st.columns([3, 1]) 
+    data = np.random.randn(10, 1)
 
-	with col1 :
-	    fig = px.histogram(train, x=x, nbins=50, title='Sexo dos Passageiros', labels={"Sex": 'Sexo'},width=400, height=400)
-	    st.plotly_chart(fig, use_container_width=False, sharing='streamlit')
+    col1.subheader("A wide column with a chart")
+    col1.line_chart(data)
 
-	with col2 :
-	    fig = px.bar(train, x=x, y=y, color="Sex", title=" Sobreviventes x Sexo ",labels={'Sex': 'Sexo', 'Survived': 'Sobreviventes'},width=400, height=400)
-	    st.plotly_chart(fig, use_container_width=False, sharing='streamlit')		
+    col2.subheader("A narrow column with the data")
+    col2.write(data)
 		
 def data_header():
     st.header('Cabeçalho do Dataframe')
