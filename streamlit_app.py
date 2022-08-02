@@ -31,8 +31,8 @@ def data_describe():
     fig.show()	
 
     # Use `hole` to create a donut-like pie chart
-    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
-    st.plotly_chart(fig)
+    #fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
+    #st.plotly_chart(fig)
 
     n = df['target'].value_counts() [0]
     e = df['target'].value_counts() [1]
