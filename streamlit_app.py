@@ -41,7 +41,7 @@ def data_header():
 
 def bar_plot():
 
-    st.header('Gráfico horizontall')
+    st.header('Gráfico horizontal')
     fig = px.bar(x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ],
     y = ['Não atende','Atende'],
     title=" Tipos de dados ",
@@ -115,14 +115,14 @@ st.title('Projeto de exploração de dados')
 st.text('Este é um aplicativo web permite a exploração de dados em vários formatos de gráficos')
 
 # Configuração da barra lateral
-st.sidebar.title('Área lateral')
+st.sidebar.title('Barra lateral')
 upload_file = 'https://drive.google.com/u/0/uc?id=1HXq9mczY-5OpFaXK3kk8zAgFEgEgF3jt&export=download'
 #Navegação na barra lateral
 st.sidebar.title('Navegação')
 options = st.sidebar.radio('Selecione o que deseja exibir:', ['Home', 'Resumo de Dados', 'Cabeçalho de dados', 'Gráfico de barras horizontal', 
 							      'Seleção aleatória de 200 entradas do dataset', 
 							      'Seleção aleatória de 50% das entradas do dataset',
-							      'Seleção aleatória de '])
+							      'Utilização da função train_test_split'])
 
 # Verifica se o arquivo foi carregado
 if upload_file is not None:
