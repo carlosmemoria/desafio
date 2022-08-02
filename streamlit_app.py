@@ -23,7 +23,7 @@ def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
 
-    values = df["target"].value_counts().values
+    values = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ]
     labels = ['Atende','Não atende']
     
     fig = px.histogram(df, x=values, nbins=30)
