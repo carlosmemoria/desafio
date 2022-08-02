@@ -28,8 +28,8 @@ def data_describe():
     
     fig = go.Figure(data=[go.Bar(labels=labels, values=values)])
     #fig = go.Figure([go.Bar(x=labels, y=[20, 14, 23])])
-    fig.show()	
-
+    st.plotly_chart(fig)
+	
     # Use `hole` to create a donut-like pie chart
     #fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
     #st.plotly_chart(fig)
