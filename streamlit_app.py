@@ -6,6 +6,15 @@ import sklearn
 
 import plotly.express as px
 
+st.write("""
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fascinate');
+html, body, [class*="css"]  {
+   font-family: 'Fascinate', cursive;
+}
+</style>
+""", unsafe_allow_html=True)
+
 condTrue = 'Não há ocorrência do evento que desejamos prever em '
 condFalse = 'Existe ocorrência do evento que desejamos prever '
 resposta = 'linhas'
