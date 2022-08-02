@@ -24,13 +24,13 @@ def data_describe():
     st.write(df.describe())
 	
 	
-    anos = df["target"].value_counts().index
-    labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
-    values = [4500, 2500, 1053, 500]
+    labels = ['Oxygen','Hydrogen']
+    values = df["target"].value_counts().index
 
     # Use `hole` to create a donut-like pie chart
     fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
     fig.show()
+    #st.plotly_chart(fig)
 
     n = df['target'].value_counts() [0]
     e = df['target'].value_counts() [1]
