@@ -26,7 +26,7 @@ def data_describe():
     values = df["target"].value_counts().values
     labels = ['Atende','Não atende']
     
-    fig = go.Figure(data=[go.Bar(labels=labels, values=values, hole=.3)])
+    fig = go.Figure(data=[go.Bar(labels=labels, values=values)])
     #fig = go.Figure([go.Bar(x=labels, y=[20, 14, 23])])
     fig.show()	
 
