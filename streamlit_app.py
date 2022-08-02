@@ -25,10 +25,10 @@ def data_describe():
 
     col1, col2 = st.beta_columns(2)
 
-    with col1:
     x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ]
     y = ['Atendida','Não atendida']
-	
+    
+    with col1:	
     fig = px.bar(x = x,
     y = y,
     title=" Tipos de dados ",
