@@ -28,8 +28,13 @@ def data_describe():
     values = df["target"].value_counts().index
  
     # Use `hole` to create a donut-like pie chart
-    fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
-    
+    fig = go.Figure(data=[go.Pie(
+	
+	x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ],
+    y = ['Não atende','Atende'],
+    title=" Tipos de dados ",
+    labels={'x':'Quantidade','y':'Condição'}
+	)])
     st.plotly_chart(fig)
 
     n = df['target'].value_counts() [0]
