@@ -26,7 +26,7 @@ def data_describe():
     values = df["target"].value_counts().values
     labels = ['Atende','Não atende']
     
-    fig = px.histogram(df, x=values, nbins=0)
+    fig = px.histogram(df, x=values, nbins=30)
     st.plotly_chart(fig)
 
     # Use `hole` to create a donut-like pie chart
