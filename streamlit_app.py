@@ -26,11 +26,11 @@ def data_describe():
 	
     labels = ['Oxygen','Hydrogen']
     values = df["target"].value_counts().index
-
+ 
     # Use `hole` to create a donut-like pie chart
     fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
-    fig.show()
-    #st.plotly_chart(fig)
+    
+    st.plotly_chart(fig)
 
     n = df['target'].value_counts() [0]
     e = df['target'].value_counts() [1]
