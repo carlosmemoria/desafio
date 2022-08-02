@@ -22,11 +22,13 @@ def home(uploaded_file):
 def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
-	
-	
-    labels = ['Atende','Não atende']
+
     values = df["target"].value_counts().values
- 
+    labels = ['Atende','Não atende']
+    
+    fig = go.Figure([go.Bar(labels=labels, values=values, hole=.3)])
+    fig.show()	
+
     # Use `hole` to create a donut-like pie chart
     fig = go.Figure(data=[go.Pie(labels=labels, values=values, hole=.3)])
     st.plotly_chart(fig)
