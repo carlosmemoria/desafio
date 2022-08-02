@@ -26,7 +26,7 @@ def data_describe():
     values = df["target"].value_counts().values
     labels = ['Atende','Não atende']
     
-    fig = px.histogram(df, x=values, nbins=20, color="target")
+    fig = px.histogram(df, x=values)
     fig.show()
 	
     # Use `hole` to create a donut-like pie chart
