@@ -33,12 +33,12 @@ def data_describe():
 	y = y,
 	title=" Tipos de dados ",
 	labels={'x':'Quantidade','y':'Condição'},width=400, height=400)
-	st.plotly_chart(fig)	
+	st.plotly_chart(fig, use_container_width=False, sharing='streamlit')	
 
     with col2:
     # Use `hole` to create a donut-like pie chart
 	    fig = go.Figure(data=[go.Pie(labels=y, values=x, hole=.3)])
-	    st.plotly_chart(fig)
+	    st.plotly_chart(fig, use_container_width=False, sharing='streamlit')
 
 	    n = df['target'].value_counts() [0]
 	    e = df['target'].value_counts() [1]
