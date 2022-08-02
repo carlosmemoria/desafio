@@ -34,7 +34,7 @@ def data_describe():
 	)
     plt.axis("equal")
     plt.title("Ano de início de graduação dos alunos que realizaram o ENADE em 2016")
-    plt.legend()
+    st.plotly_chart(plt)
 
     n = df['target'].value_counts() [0]
     e = df['target'].value_counts() [1]
