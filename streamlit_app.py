@@ -23,6 +23,9 @@ def data_describe():
     st.header('Estatísticas do Dataframe')
     st.write(df.describe())
 
+    col1, col2 = st.beta_columns(2)
+
+    with col1:
     x = [ df['target'].value_counts() [0], df['target'].value_counts() [1] ]
     y = ['Atendida','Não atendida']
 	
@@ -31,7 +34,8 @@ def data_describe():
     title=" Tipos de dados ",
     labels={'x':'Quantidade','y':'Condição'},width=400, height=400)
     st.plotly_chart(fig)	
-
+    
+    with col2:
     # Use `hole` to create a donut-like pie chart
     fig = go.Figure(data=[go.Pie(labels=y, values=x, hole=.3)])
     st.plotly_chart(fig)
