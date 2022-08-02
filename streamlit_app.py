@@ -24,7 +24,7 @@ def data_describe():
     st.write(df.describe())
 	
 	
-    labels = ['Oxygen','Hydrogen']
+    labels = ['Atende','Não atende']
     values = df["target"].value_counts().values
  
     # Use `hole` to create a donut-like pie chart
