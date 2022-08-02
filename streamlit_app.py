@@ -9,21 +9,7 @@ from sklearn.model_selection import train_test_split
 condTrue = 'Não há ocorrência do evento que desejamos prever em '
 condFalse = 'Existe ocorrência do evento que desejamos prever '
 resposta = 'linhas'
-
-st.set_page_config(layout="wide")
-# Funções para cada uma das páginas
-def home(uploaded_file):
-
-    if uploaded_file:
-        st.header('Comece a explorar os dados usando o menu à esquerda')
-    else:
-        st.header('To begin please upload a file')
-
-def data_describe():
-    st.header('Estatísticas do Dataframe')
-    #st.write(df.describe())
-
-    col1, col2, col3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 
 	with col1:
 	    st.header("A cat")
@@ -36,6 +22,18 @@ def data_describe():
 	with col3:
 	    st.header("An owl")
 	    st.image("https://static.streamlit.io/examples/owl.jpg")
+st.set_page_config(layout="wide")
+# Funções para cada uma das páginas
+def home(uploaded_file):
+
+    if uploaded_file:
+        st.header('Comece a explorar os dados usando o menu à esquerda')
+    else:
+        st.header('To begin please upload a file')
+
+def data_describe():
+    st.header('Estatísticas do Dataframe')
+    st.write(df.describe())
 		
 def data_header():
     st.header('Cabeçalho do Dataframe')
